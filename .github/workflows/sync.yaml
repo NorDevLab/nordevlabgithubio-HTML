@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: github.com/NorDevLab/nordevlab.github.io
+          repository: NorDevLab/nordevlab.github.io
           ref: 'main'
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
       - name: setup git config
