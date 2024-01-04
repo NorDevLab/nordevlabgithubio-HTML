@@ -6,20 +6,24 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
- #     - name: create folder
- #       run: mkdir repo-site && pwd && ls -lah
         
-      - uses: actions/checkout@v4
+      - name: Chekout remote repo
+        uses: actions/checkout@v4
         with:
           repository: NorDevLab/nordevlab.github.io
           ref: 'main'
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
           path: repo-site
-                
-      #- name: setup git config
-      #  run: |
-      #    git config user.name "GitHub Actions Bot"
-      #    git config user.email "foo@bar.com"
+      
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+      
+      - name: Copy and push
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "foo@bar.com"
+          ls -lah
+          
       #- run: git add . && git commit -am 'sync'
       #- run: git push origin main
       - run: cd repo-site && pwd && ls -la
