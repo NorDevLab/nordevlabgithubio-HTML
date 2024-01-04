@@ -17,11 +17,15 @@ jobs:
       
       - name: Checkout current repo
         uses: actions/checkout@v4
-      
+        with:
+          path: repo-site-current
+          
       - name: Copy and push
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "foo@bar.com"
+          ls
+          cd repo-site-current
           ls -lah
           
       #- run: git add . && git commit -am 'sync'
