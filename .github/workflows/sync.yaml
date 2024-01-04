@@ -6,8 +6,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: create folder
-        run: mkdir repo-site && pwd && ls -lah
+ #     - name: create folder
+ #       run: mkdir repo-site && pwd && ls -lah
         
       - uses: actions/checkout@v4
         with:
@@ -16,10 +16,10 @@ jobs:
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
           path: repo-site
                 
-      - name: setup git config
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "foo@bar.com"
+      #- name: setup git config
+      #  run: |
+      #    git config user.name "GitHub Actions Bot"
+      #    git config user.email "foo@bar.com"
       #- run: git add . && git commit -am 'sync'
       #- run: git push origin main
       - run: pwd && ls -la
