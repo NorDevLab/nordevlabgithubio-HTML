@@ -28,10 +28,6 @@ jobs:
           cd repo-site && \
           git config user.name "GitHub Actions Bot"
           git config user.email "foo@bar.com"
-          #ls
-          #cd repo-site-current
-          ls -lah
           
-      #- run: git add . && git commit -am 'sync'
-      #- run: git push origin main
-      #- run: cd repo-site && pwd && ls -la
+      - run: git add . && git commit -am 'sync'
+      - run: git push origin main
