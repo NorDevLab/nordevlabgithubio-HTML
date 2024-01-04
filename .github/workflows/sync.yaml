@@ -7,13 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: path
-        run: mkdir repo-site $$ cd repo/
+        working-directory: repo-site
+        run: pwd
         
       - uses: actions/checkout@v4
         with:
           repository: NorDevLab/nordevlab.github.io
           ref: 'main'
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+                
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"
