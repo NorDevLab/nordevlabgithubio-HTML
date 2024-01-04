@@ -14,6 +14,7 @@ jobs:
       - name: setup git config
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-      - run: git add . && git commit -am 'sync'
-      - run: git push origin main
+          git config user.email "foo@bar.com"
+      #- run: git add . && git commit -am 'sync'
+      #- run: git push origin main
+      - run: ls -lah
