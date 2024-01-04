@@ -14,7 +14,7 @@ jobs:
           repository: NorDevLab/nordevlab.github.io
           ref: 'main'
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-          dir: repo-site
+          path: repo-site
                 
       - name: setup git config
         run: |
