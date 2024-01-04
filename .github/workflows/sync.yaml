@@ -6,15 +6,15 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: path
-        working-directory: repo-site
-        run: pwd
+      - name: create folder
+        run: mkdir repo-site
         
       - uses: actions/checkout@v4
         with:
           repository: NorDevLab/nordevlab.github.io
           ref: 'main'
           token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          dir: repo-site
                 
       - name: setup git config
         run: |
@@ -22,4 +22,4 @@ jobs:
           git config user.email "foo@bar.com"
       #- run: git add . && git commit -am 'sync'
       #- run: git push origin main
-      - run: ls -lah && pwd
+      - run: cd repo-site && ls -lah && pwd
