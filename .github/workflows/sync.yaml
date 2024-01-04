@@ -24,7 +24,7 @@ jobs:
         run: |
           rm -rf repo-site-current/.github && \
           rm -rf repo-site-current/.git && \
-          mv * repo-site-current/* repo-site/ && \
+          mv repo-site-current/* repo-site/ && \
           cd repo-site && \
           git config user.name "GitHub Actions Bot"
           git config user.email "foo@bar.com"
