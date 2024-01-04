@@ -20,14 +20,14 @@ jobs:
         with:
           path: repo-site-current
           
-      - name: Copy and push
+      - name: Copy
         run: |
           rm -rf repo-site-current/.github && \
           rm -rf repo-site-current/.git && \
           cp -r repo-site-current/* repo-site/ && \
-          cd repo-site && \
           git config user.name "GitHub Actions Bot"
           git config user.email "foo@bar.com"
-          
-      - run: git add . && git commit -am 'sync'
-      - run: git push origin main
+      
+      - name: Push
+        run: cd repo-site && git add . && git commit -am 'sync' && git push origin main
+      
