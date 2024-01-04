@@ -6,6 +6,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: path
+        run: mkdir repo $$ cd repo/
+        
       - uses: actions/checkout@v4
         with:
           repository: NorDevLab/nordevlab.github.io
@@ -17,4 +20,4 @@ jobs:
           git config user.email "foo@bar.com"
       #- run: git add . && git commit -am 'sync'
       #- run: git push origin main
-      - run: ls -lah
+      - run: ls -lah && pwd
