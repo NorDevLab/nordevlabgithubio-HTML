@@ -25,7 +25,8 @@ jobs:
           rm -rf repo-site-current/.github && \
           rm -rf repo-site-current/.git && \
           cp -r repo-site-current/* repo-site/ && \
-          git config user.name "GitHub Actions Bot"
+          cd repo-site && \
+          git config user.name "GitHub Actions Bot" && \
           git config user.email "foo@bar.com"
       
       - name: Push
