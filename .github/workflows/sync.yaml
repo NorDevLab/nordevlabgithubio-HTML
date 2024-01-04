@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: path
-        run: mkdir repo $$ cd repo/
+        run: mkdir repo-site $$ cd repo/
         
       - uses: actions/checkout@v4
         with:
