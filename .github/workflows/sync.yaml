@@ -23,10 +23,6 @@ jobs:
         with:
           path: repo-site-current
       
-      - name: build app
-        working-directory: ./repo-site-current
-        run: npm ci && npm run build
-        
           
       - name: Copy
         run: |
